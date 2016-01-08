@@ -1,5 +1,16 @@
 template(name='contact')
 	div.contact-div
 		div.container-fluid.text-center
-			div.container-fluid.module-div-i.animated.fadeInUp
-				h6 CONTACT US
+		
+			unless currentUser
+				h6.animated.fadeInLeft SIGN IN WITH
+				hr.animated.fadeInRight
+				
+				//div.container-fluid.animated.zoomIn#contact-sign-div
+				a.btn.btn-material-red-700.shadow-z-1.animated.zoomIn#google
+					h5 GOOGLE
+				br
+				a.btn.btn-material-blue-800.shadow-z-1.animated.zoomIn#facebook
+					h5 FACEBOOK
+			else
+				h6 Logged In
