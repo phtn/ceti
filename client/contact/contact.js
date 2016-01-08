@@ -15,6 +15,12 @@ Template.contact.events({
 	},
 	'click #logout' () {
 		Meteor.logout()
+	},
+	'keyup #message-input' (e) {
+		if (e.which === 13) {
+			console.log('13')
+			$(".chat-box").animate({scrollTop:$(".chat-box")[0].offset().bottom}, 500);
+		}
 	}
 })
 
@@ -35,6 +41,12 @@ Template.contact.rendered = ()=> {
 		Session.setPersistent('firstName', Meteor.user().profile.name)
 	}
 
+	Tracker.autorun(function() {
+		Messages.find().count();
+		var chatBox = $('.chat-box');
+		chatBox.scrollTop = chatBox.scrollHeight;
+	});
+
 }
 
 function getFirstName(name) {
@@ -43,3 +55,4 @@ function getFirstName(name) {
     else
         return name.substr(0, name.indexOf(' '));
 };
+

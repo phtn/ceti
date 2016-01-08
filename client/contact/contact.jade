@@ -21,10 +21,10 @@ template(name='contact')
 					hr
 					div.chat-box
 						+each messages
-							div(class='#{format}').animated.zoomInLeft
+							div(class='#{format}')
 								p #{message}
 					div.message-input
 						+autoForm id='insertMessage' type='insert' collection='Messages'
-							+afQuickField name='message' placeholder='Ask us anything..'
+							+afQuickField id='message-input' name='message' placeholder='ASK US ANYTHING..'
 					//a.btn.btn-default#logout logout
 

@@ -25,7 +25,7 @@ MessageSchema = new SimpleSchema({
 		type: String,
 		label: 'Format',
 		autoValue () {
-			return 'messages left-message' 
+			return 'messages pull-right right-message animated zoomInRight' 
 		}
 	},
 	createdAt: {
