@@ -3,14 +3,17 @@ template(name='contact')
 		div.container-fluid.text-center
 		
 			unless currentUser
-				h6.animated.fadeInLeft SIGN IN WITH
-				hr.animated.fadeInRight
-				
-				//div.container-fluid.animated.zoomIn#contact-sign-div
-				a.btn.btn-material-red-700.shadow-z-1.animated.zoomIn#google
-					h5 GOOGLE
-				br
-				a.btn.btn-material-blue-800.shadow-z-1.animated.zoomIn#facebook
-					h5 FACEBOOK
+				div.sign-div
+					h6.animated.fadeInLeft 
+						span.ion-android-create
+						span SIGN IN WITH
+					hr.animated.fadeInRight
+					
+					//div.container-fluid.animated.zoomIn#contact-sign-div
+					a.btn.btn-material-red-700.shadow-z-1.animated.zoomIn#google
+						h5 GOOGLE
+					br
+					a.btn.btn-material-blue-800.shadow-z-1.animated.zoomIn#facebook
+						h5 FACEBOOK
 			else
 				h6 Logged In
