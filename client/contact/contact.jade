@@ -16,4 +16,15 @@ template(name='contact')
 					a.btn.btn-material-blue-800.shadow-z-1.animated.zoomIn#facebook
 						h5 FACEBOOK
 			else
-				h6 Logged In
+				div.chat-div
+					h6 Hi #{user}!
+					hr
+					div.chat-box
+						+each messages
+							div(class='#{format}').animated.zoomInLeft
+								p #{message}
+					div.message-input
+						+autoForm id='insertMessage' type='insert' collection='Messages'
+							+afQuickField name='message' placeholder='Ask us anything..'
+					//a.btn.btn-default#logout logout
+
