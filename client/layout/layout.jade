@@ -1,4 +1,7 @@
 template(name="layout")
-	+Template.dynamic template=nav
-	div.body-div
+	div.head-layout-div
+		+Template.dynamic template=head
+	div.body-layout-div
 		+Template.dynamic template=body
+	div.foot-layout-div
+		+Template.dynamic template=foot
