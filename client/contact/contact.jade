@@ -4,7 +4,7 @@ template(name='contact')
 		
 			unless currentUser
 				div.sign-div
-					h6.animated.fadeInLeft 
+					h6.animated.fadeInLeft.page-title
 						span.ion-android-create
 						span SIGN IN WITH
 					hr.animated.fadeInRight
@@ -17,7 +17,12 @@ template(name='contact')
 						h5 FACEBOOK
 			else
 				div.chat-div
-					h6 Hi #{user}!
+					h6
+						span.pull-left.animated.fadeInRight Hi #{user}!
+						span.signout.pull-right.animated.fadeInLeft
+							span SIGN OUT
+							span.fa.fa-sign-out
+					br
 					hr
 					div.chat-box
 						+each messages

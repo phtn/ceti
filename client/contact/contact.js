@@ -21,6 +21,9 @@ Template.contact.events({
 			console.log('13')
 			$(".chat-box").animate({scrollTop:$(".chat-box")[0].offset().bottom}, 500);
 		}
+	},
+	'click .signout' () {
+		Meteor.logout()
 	}
 })
 
