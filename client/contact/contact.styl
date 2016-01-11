@@ -49,13 +49,19 @@ div.chat-div
 	hr
 		background-color rgba(0,0,0, 0.3 )
 		border none
+	p.time
+		font 9px 'Roboto', sans-serif
 	
 div.chat-box
+	margin 10px auto
 	height 270px
-	//border 1px solid #eee
+	max-width 500px
+	border 2px solid rgba(0,0,0, 0.15 )
+	border-radius 3px
 	overflow scroll
 	overflow-x hidden
-	padding-right 2px
+	padding 10px
+	
 	
 
 span.signout
@@ -67,12 +73,12 @@ span.signout:hover
 	color #E53935
 	text-shadow -1px -1px -1px rgba(0,0,0, 0.3 )
 div.messages
-	
-	padding 5px
-	
-	max-width 250px
+	padding 10px
+	text-align left
+	max-width 300px
 	margin-bottom 5px
 	box-shadow 1px 1px 1px rgba(0,0,0, 0.3 )
+	font 10px
 div.left-message
 	border-radius 10px 5px 5px 0px
 	background: #bdbdbd;
@@ -88,7 +94,11 @@ div.right-message
 	display inline-block
 	clear both
 div.message-input
+	margin 5px auto
 	padding-top 20px
+	max-width 375px
+	padding-bottom 0px
+	
 
 ::-webkit-input-placeholder
 	letter-spacing 2px

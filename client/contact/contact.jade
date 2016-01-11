@@ -28,8 +28,9 @@ template(name='contact')
 						+each messages
 							div(class='#{format}')
 								p #{message}
+								p.time {{momentFormat createdAt}}
 					div.message-input
 						+autoForm id='insertMessage' type='insert' collection='Messages'
-							+afQuickField id='message-input' name='message' placeholder='ASK US ANYTHING..'
+							+afQuickField id='message-input' name='message' placeholder='ASK US ANYTHING..' autocomplete='off'
 					//a.btn.btn-default#logout logout
 
