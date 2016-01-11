@@ -27,16 +27,25 @@ Template.contact.events({
 	},
 	'click .signout' () {
 		Meteor.logout()
+	},
+	'focus #message-input' () {
+		$('.footer').fadeOut()
+	},
+	'blur #message-input' () {
+		$('.footer').show('fast')
 	}
 })
 
 // HELPERS
 Template.contact.helpers({
 	user () {
-		return getFirstName(Session.get('firstName'))
+		if (Meteor.userId()) {
+			return getFirstName(Meteor.user().profile.name)	
+		}
+		
 	},
 	messages () {
-		return Messages.find({owner: Meteor.userId()})
+		return Messages.find({owner: Meteor.userId()}, {sort: {createdAt: -1}, limit: 10}).fetch().reverse()
 	},
 	moment () {
 		var coll = Messages.findOne({owner: Meteor.userId()})
@@ -60,6 +69,7 @@ Template.contact.rendered = ()=> {
 	}
 
 
+
 }
 
 function getFirstName(name) {
@@ -73,3 +83,4 @@ function scrollDown() {
 	$('.chat-box').animate({
   		scrollTop: $('.chat-box').get(0).scrollHeight}, 1500);
 }
+

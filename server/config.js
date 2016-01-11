@@ -1,4 +1,4 @@
-ServiceConfiguration.configurations.remove({ service: ['google', 'facebook'] });
+ServiceConfiguration.configurations.remove({ service: ['google', 'facebook', 'github'] });
 
 ServiceConfiguration.configurations.upsert(
   { service: "google" },
@@ -15,4 +15,12 @@ ServiceConfiguration.configurations.upsert(
     appId: "908527415921343", 
     secret: "b2b50cf7d959d3a2357ae2869f25464c" 
   } }
+);
+
+ServiceConfiguration.configurations.upsert(
+  {service: 'github'},
+  {$set: {
+    clientId: 'fb854223aff35411dbfc',
+    secret: '28d4e9c97a85281aab84bc06ded56cce0c3c5d17'
+  }}
 );

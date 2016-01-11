@@ -41,6 +41,8 @@ aldeed:autoform
 service-configuration
 accounts-google
 accounts-facebook
+accounts-github
 accounts-base
 hedcet:touch-swipe
 momentjs:moment
+

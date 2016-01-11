@@ -18,12 +18,13 @@ template(name='contact')
 			else
 				div.chat-div
 					h6
-						span.pull-left.animated.fadeInRight Hi #{user}!
+						span.pull-left.animated.fadeInRight
+							span.fa.fa-user &nbsp;&nbsp;
+							span #{user}
 						span.signout.pull-right.animated.fadeInLeft
 							span SIGN OUT
 							span.fa.fa-sign-out
 					br
-					hr
 					div.chat-box
 						+each messages
 							div(class='#{format}')
