@@ -62,10 +62,11 @@ Template.registerHelper('momentFormat', function(date) {
 // RENDERED
 Template.contact.rendered = ()=> {
 
-	scrollDown();
+	
 
 	if (Meteor.userId() !== null) {
 		Session.setPersistent('firstName', Meteor.user().profile.name)
+		scrollDown();
 	}
 
 
